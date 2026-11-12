@@ -1,47 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="LipUqzpXWiU1HXmequ9IXblU1sXef7enON362FBO6D4" />
   <meta name="google-site-verification" content="pCNhdhge-w2lbd5kCNlN2ZCmh8lBYUFy_nCan8ElxHo" />
-  <title>Mohammad Golamrabbii — Open Typography Foundation</title>
-  <meta name="description" content="Official Gateway of Mohammad Golamrabbii, Founder of Open Typography Foundation. 500,337+ Free Fonts across 100 Sovereign Vaults.">
-  <meta http-equiv="refresh" content="1; url=https://mohammadgolamrabbii.github.io/typography/">
-  <link rel="canonical" href="https://mohammadgolamrabbii.github.io/typography/">
+  <title>Mohammad Golamrabbii — Open Bangla AI, NLP & Global Typography Hub</title>
+  <meta name="description" content="Official Open-Source Ecosystem by Mohammad Golamrabbii: Bangla LLM Training Core (373k+ SFT, 88k Pretrain, 8k DPO), Open-Bangla NLP Suite, 587k+ Bangla Lexicon, 48k+ Bilingual Bridge, and 500,337+ Free Fonts." />
+  <link rel="canonical" href="https://mohammadgolamrabbii.github.io/" />
   <style>
+    :root {
+      --bg: #070b14;
+      --surface: #0f172a;
+      --surface-2: #162238;
+      --border: #253552;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --emerald: #10b981;
+      --violet: #a78bfa;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; }
     body {
-      background: #090d16;
-      color: #f1f5f9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       margin: 0;
-      text-align: center;
-      padding: 1.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Hind Siliguri", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top right, #132544 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
     }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #38bdf8; }
-    p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; line-height: 1.6; }
-    a.btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.85rem 1.75rem;
-      background: #10b981;
-      color: #0f172a;
-      font-weight: 800;
-      text-decoration: none;
-      border-radius: 9999px;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 64px; }
+    .hero {
+      background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(56,189,248,0.12));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 26px;
     }
+    .pill {
+      display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 12px;
+      border-radius: 999px; background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.35);
+      color: #bae6fd; margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 42px); line-height: 1.15; }
+    .hero p { margin: 0 0 18px; color: var(--muted); max-width: 780px; font-size: 16px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px;
+      border-radius: 10px; font-weight: 700; font-size: 14px; border: 1px solid var(--border);
+      background: var(--surface-2); transition: 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+    .btn.primary { background: linear-gradient(135deg, #0284c7, #059669); border-color: transparent; color: #fff; }
+    .btn.colab { background: linear-gradient(135deg, #d97706, #ea580c); border-color: transparent; color: #fff; }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px; margin-bottom: 28px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+      transition: 0.15s ease;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card h2 { margin: 0 0 8px; font-size: 19px; display: flex; align-items: center; gap: 8px; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+    .metrics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .tag {
+      font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px;
+      background: rgba(16,185,129,0.14); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.28);
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .link-sm {
+      font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 8px;
+      background: var(--surface-2); border: 1px solid var(--border);
+    }
+    .link-sm:hover { border-color: var(--accent); }
+
+    .panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 22px; margin-bottom: 24px;
+    }
+    .panel h2 { margin: 0 0 10px; font-size: 20px; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tab {
+      padding: 7px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface-2); color: var(--muted); cursor: pointer; font-weight: 700; font-size: 13px;
+    }
+    .tab.active { background: var(--accent); color: #04101f; border-color: var(--accent); }
+    .code-wrap { position: relative; }
+    pre {
+      margin: 0; padding: 14px; border-radius: 10px; background: #050810;
+      border: 1px solid var(--border); color: #dbeafe; overflow-x: auto; font-size: 13px;
+    }
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px; padding: 5px 10px; border-radius: 7px;
+      border: 1px solid var(--border); background: var(--surface-2); color: #fff;
+      cursor: pointer; font-size: 12px; font-weight: 700;
+    }
+    footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 28px; }
   </style>
 </head>
 <body>
-  <h1>🏛️ Open Typography Foundation</h1>
-  <p>500,337+ Verified Free Fonts across 100 Sovereign Script Vaults.<br>Curated & Architected by <strong>Mohammad Golamrabbii</strong>.</p>
-  <p>Redirecting to the master portal...</p>
-  <a class="btn" href="https://mohammadgolamrabbii.github.io/typography/">Launch Font Browser & Downloader →</a>
+  <div class="wrap">
+    <section class="hero">
+      <div class="pill">Open-Source AI · Bangla &amp; South Asian NLP · Global Typography</div>
+      <h1>Mohammad Golamrabbii — Open Ecosystem Hub</h1>
+      <p>
+        বিশ্বজুড়ে ডেভেলপার, AI/ML গবেষক ও ডিজাইনারদের জন্য উন্মুক্ত বাংলা LLM ট্রেইনিং স্ট্যাক,
+        মরফোলজি/অভিধান/ইডিয়ম ডেটাসেট, দ্বিভাষিক ব্রিজ এবং ৫,০০,৩৩৭+ ওপেন-সোর্স ফন্টের একক প্ল্যাটফর্ম।
+      </p>
+      <div class="cta-row">
+        <a class="btn colab" href="https://colab.research.google.com/github/mohammadgolamrabbii/Bangla-LLM-Training-Core/blob/main/training/Bangla_LLM_Colab_Quickstart.ipynb" target="_blank" rel="noopener">🚀 Train Bangla LLM in Colab</a>
+        <a class="btn primary" href="https://mohammadgolamrabbii.github.io/Bangla-LLM-Training-Core/" target="_blank" rel="noopener">🧬 LLM Training Core</a>
+        <a class="btn" href="https://mohammadgolamrabbii.github.io/Open-Bangla-NLP-Suite/" target="_blank" rel="noopener">🧠 Open-Bangla NLP</a>
+        <a class="btn" href="https://mohammadgolamrabbii.github.io/typography/" target="_blank" rel="noopener">🔤 500k+ Fonts Browser</a>
+        <a class="btn" href="https://github.com/mohammadgolamrabbii" target="_blank" rel="noopener">🐙 GitHub Profile</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div>
+          <h2>🧬 Bangla-LLM-Training-Core</h2>
+          <p>সম্পূর্ণ বাংলা LLM ট্রেইনিং পাইপলাইন: Tokenizer, Canonical NFC Pre-training, Multi-Task SFT, Orthography DPO ও Held-out Eval।</p>
+          <div class="metrics">
+            <span class="tag">88,403 Pretrain Docs</span>
+            <span class="tag">373,570 SFT</span>
+            <span class="tag">8,000 DPO</span>
+            <span class="tag">Zero Eval Leakage</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Bangla-LLM-Training-Core/" target="_blank">🌐 Live Portal</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/Bangla-LLM-Training-Core" target="_blank">📦 GitHub Repo</a>
+          <a class="link-sm" href="https://colab.research.google.com/github/mohammadgolamrabbii/Bangla-LLM-Training-Core/blob/main/training/Bangla_LLM_Colab_Quickstart.ipynb" target="_blank">🚀 Colab</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h2>🧠 Open-Bangla-NLP-Suite</h2>
+          <p>শব্দমূল ও বিভক্তি বিশ্লেষক (Stemmer), বাগধারা-প্রবাদ, ব্যুৎপত্তি মানচিত্র, Synthetic Bangla OCR ও Python/JS SDK।</p>
+          <div class="metrics">
+            <span class="tag">32,381 Root Families</span>
+            <span class="tag">5,445 Idioms</span>
+            <span class="tag">6,101 Etymology</span>
+            <span class="tag">460 Eval Tasks</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Open-Bangla-NLP-Suite/" target="_blank">🌐 Web Studio</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/Open-Bangla-NLP-Suite" target="_blank">📦 GitHub Repo</a>
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Open-Bangla-NLP-Suite/?tab=ocr" target="_blank">🖼️ OCR Generator</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h2>🇧🇩 Bangla-Lexicon-Mega-Archive</h2>
+          <p>প্রমিত Canonical NFC ইউনিকোডে যাচাইকৃত বিশাল বাংলা শব্দভাণ্ডার — অর্থ, POS, সমার্থক ও ইংরেজি অনুবাদসহ।</p>
+          <div class="metrics">
+            <span class="tag">587,464 Verified Words</span>
+            <span class="tag">119,630 Rich Entries</span>
+            <span class="tag">GPL-3.0 / CC BY-SA</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Bangla-Lexicon-Mega-Archive/" target="_blank">🌐 Web Explorer</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/Bangla-Lexicon-Mega-Archive" target="_blank">📦 GitHub Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h2>🌉 Bangla-Hindi-Bilingual-Bridge</h2>
+          <p>বাংলা ↔ হিন্দি ↔ ইংরেজি সমান্তরাল সহোদর শব্দ (Cognates) ও বহুভাষিক গবেষণার উন্মুক্ত ব্রিজ ডেটাসেট।</p>
+          <div class="metrics">
+            <span class="tag">48,250 Parallel Cognates</span>
+            <span class="tag">22,583 Rich Pairs</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Bangla-Hindi-Bilingual-Bridge/" target="_blank">🌐 Web Explorer</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/Bangla-Hindi-Bilingual-Bridge" target="_blank">📦 GitHub Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h2>🇮🇳 Hindi-Lexicon-Mega-Archive</h2>
+          <p>দেবনগরী লিপিতে যাচাইকৃত NFC হিন্দি শব্দভাণ্ডার, বানান-পরীক্ষক ও NLP রিসার্চ ডেটাসেট।</p>
+          <div class="metrics">
+            <span class="tag">411,241 Verified Words</span>
+            <span class="tag">Hunspell + JSONL</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/Hindi-Lexicon-Mega-Archive/" target="_blank">🌐 Web Explorer</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/Hindi-Lexicon-Mega-Archive" target="_blank">📦 GitHub Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h2>🏛️ Open Typography Foundation</h2>
+          <p>১০০টি ভাষার লিপি ও ৫,০২০+ বাংলা ফন্টসহ ৫,০০,৩৩৭+ ওপেন-সোর্স টাইপফেস ব্রাউজার ও ১-ক্লিক ইনস্টলার।</p>
+          <div class="metrics">
+            <span class="tag">500,337+ Free Fonts</span>
+            <span class="tag">5,020+ Bangla Fonts</span>
+            <span class="tag">100 Script Vaults</span>
+          </div>
+        </div>
+        <div class="links">
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/typography/" target="_blank">🌐 Master Portal</a>
+          <a class="link-sm" href="https://mohammadgolamrabbii.github.io/typography/font_browser.html" target="_blank">🔍 Font Browser</a>
+          <a class="link-sm" href="https://github.com/mohammadgolamrabbii/typography" target="_blank">📦 GitHub Repo</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>⚡ ১ লাইনে ব্যবহার করুন (Developers &amp; Researchers Quickstart)</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="py">Python (pip + Data)</button>
+        <button class="tab" data-tab="hf">Hugging Face LLM Data</button>
+        <button class="tab" data-tab="js">Browser / Node.js Fetch</button>
+        <button class="tab" data-tab="fonts">1-Click Fonts Installer</button>
+      </div>
+      <div class="code-wrap">
+        <button class="copy-btn" id="copy-btn">📋 Copy</button>
+        <pre id="code-box"></pre>
+      </div>
+    </section>
+
+    <footer>
+      Curated &amp; Maintained by <strong>Mohammad Golamrabbii</strong> · All datasets &amp; tools are open-source (GPL-3.0 / CC BY-SA 4.0 / SIL OFL 1.1)
+    </footer>
+  </div>
+
+  <script>
+    const SNIPPETS = {
+      py: `# ১. সরাসরি GitHub থেকে Python প্যাকেজ ইনস্টল করুন (কোনো PyPI অ্যাকাউন্ট ছাড়াই):
+pip install "git+https://github.com/mohammadgolamrabbii/Open-Bangla-NLP-Suite.git#subdirectory=packages/python"
+
+# ২. পাইথনে Canonical NFC নর্মালাইজার, Stemmer ও ৫.৮৭ লক্ষ শব্দ ব্যবহার করুন:
+from open_bangla_nlp import to_bangla_canonical, BanglaStemmer, load_bangla_lexicon, load_idioms
+
+lexicon = load_bangla_lexicon()        # 587,464 verified Bangla words
+stemmer = BanglaStemmer(lexicon)
+print(stemmer.analyze("পড়েছিলেন"))
+print("Total idioms:", len(load_idioms()))`,
+
+      hf: `# Hugging Face datasets দিয়ে সরাসরি বাংলা LLM ট্রেইনিং ডেটা লোড করুন:
+git clone --depth 1 https://github.com/mohammadgolamrabbii/Bangla-LLM-Training-Core.git
+
+from datasets import load_dataset
+sft = load_dataset("json", data_files={
+    "train": "Bangla-LLM-Training-Core/datasets/sft/sft_train_*.jsonl",
+    "validation": "Bangla-LLM-Training-Core/datasets/sft/sft_val.jsonl"
+})
+dpo = load_dataset("json", data_files="Bangla-LLM-Training-Core/datasets/dpo/bangla_dpo_pairs.jsonl", split="train")
+print(len(sft["train"]), len(dpo))`,
+
+      js: `// ব্রাউজার বা Node.js-এ সরাসরি বাগধারা, ব্যুৎপত্তি ও বাংলা শব্দভাণ্ডার লোড করুন:
+const idioms = await fetch("https://mohammadgolamrabbii.github.io/Open-Bangla-NLP-Suite/dist/idioms-proverbs/idioms_proverbs.json").then(r => r.json());
+const etymology = await fetch("https://mohammadgolamrabbii.github.io/Open-Bangla-NLP-Suite/dist/etymology/bangla_etymology.json").then(r => r.json());
+const stats = await fetch("https://mohammadgolamrabbii.github.io/Bangla-LLM-Training-Core/dist/stats.json").then(r => r.json());
+console.log("Idioms:", idioms.length, "SFT Examples:", stats.sft.train_examples);`,
+
+      fonts: `# 🪟 Windows PowerShell (৫,০০,৩৩৭+ ফন্ট / শুধু বাংলা ফন্ট ইনস্টল):
+irm https://mohammadgolamrabbii.github.io/typography/install.ps1 | iex
+
+# 🐧 Linux / macOS Terminal:
+curl -fsSL https://mohammadgolamrabbii.github.io/typography/install.sh | bash -s -- bengali`
+    };
+    const box = document.getElementById("code-box");
+    const tabs = document.querySelectorAll(".tab");
+    const setTab = k => {
+      box.textContent = SNIPPETS[k];
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === k));
+    };
+    tabs.forEach(t => t.addEventListener("click", () => setTab(t.dataset.tab)));
+    setTab("py");
+    document.getElementById("copy-btn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(box.textContent);
+      const b = document.getElementById("copy-btn");
+      b.textContent = "✅ Copied!";
+      setTimeout(() => b.textContent = "📋 Copy", 1500);
+    });
+  </script>
 </body>
 </html>
